@@ -14,7 +14,7 @@ psql <peertube_base>
 <peertube_base>=# CREATE OR REPLACE FUNCTION get_unsorted() RETURNS TIMESTAMP as $$ SELECT random() * ('2020-02-01 00:00:00'::timestamp - '1980-01-01 00:00:00'::timestamp) + '1980-01-01 00:00:00'::timestamp $$ language sql; 
 
 <peertube_base>=# GRANT EXECUTE ON FUNCTION get_unsorted TO postgres;
-<peertube_base>=# GRANT EXECUTE ON FUNCTION get_unsorted TO postgres;
+<peertube_base>=# GRANT EXECUTE ON FUNCTION get_unsorted TO <peertube_user>;
 
 <peertube_base>=# UPDATE video SET "originallyPublishedAt" = get_unsorted()::timestamp;
 ```
