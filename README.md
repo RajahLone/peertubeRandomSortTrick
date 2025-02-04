@@ -22,7 +22,7 @@ psql <peertube_base>
 So now sorting by 'original published date' will display local videos randomly.  
 With the peertube plugin 'sort-originally-published-at', this random sort can be by default.  
 
-## reorder randomly every 10 minutes
+## Reorder randomly every 10 minutes
 
 ```
 sudo apt-get -y install postgresql-11-cron 
