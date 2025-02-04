@@ -1,6 +1,6 @@
 # peertubeRandomSortTrick
 - peertube has not (yet) a random sort feature for the local videos list.
-- this trick adds local video list random sort, using originallyPublishedAt field/column.
+- this trick adds local videos list random sort, using originallyPublishedAt field/column.
 - modification is only in the postgresql database.
 - uses pg_cron to randomize order in the video list regularly.
 
