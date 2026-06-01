@@ -25,7 +25,7 @@ With the peertube plugin 'sort-originally-published-at', this random sort can be
 ## Reorder randomly every 10 minutes
 
 ```
-sudo apt-get -y install postgresql-11-cron 
+sudo apt-get -y install postgresql-15-cron 
 
 su <peertube_user>
 
@@ -33,7 +33,7 @@ psql <peertube_base>
 
 <peertube_base>=# CREATE EXTENSION pg_cron;
 
-<peertube_base>=# SELECT cron.schedule('*/10 * * * *', $$update video set "originallyPublishedAt" = get_unsorted()::timestamp$$);
+<peertube_base>=# SELECT cron.schedule('random-sort', '*/10 * * * *', $$update video set "originallyPublishedAt" = get_unsorted()::timestamp$$);
 ```
 
 There may be credential issues. Look in /var/log/postgresql/ if the job is currently running good.  
