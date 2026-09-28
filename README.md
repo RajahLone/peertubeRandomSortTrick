@@ -25,7 +25,9 @@ With the peertube plugin 'sort-originally-published-at', this random sort can be
 ## Reorder randomly every 10 minutes
 
 ```
-sudo apt-get -y install postgresql-15-cron 
+sudo apt-get -y install postgresql-17-cron 
+
+add 'pg_cron' to 'shared_preload_libraries' in /etc/postgresql/17/main/postgresql.conf and restart postgresql service
 
 su postgres
 
